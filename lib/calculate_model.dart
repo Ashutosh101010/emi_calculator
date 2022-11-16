@@ -4,10 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
 class CalculateModel extends ChangeNotifier{
-
   double _loanValue = 1.0;
   double _tenureValue = 1.0;
-  double _intrestRate=1;
+  double _interestRate=1;
   List<String> _amountType=['lacs','thousand'];
   List _tenureType=['months','years'];
   String _selectedAmountType='lacs';
@@ -26,10 +25,10 @@ class CalculateModel extends ChangeNotifier{
   }
 
 
-  double get intrestRate => _intrestRate;
+  double get interestRate => _interestRate;
 
-  set intrestRate(double value) {
-    _intrestRate = value;
+  set interestRate(double value) {
+    _interestRate = value;
     notifyListeners();
   }
 
@@ -60,7 +59,7 @@ class CalculateModel extends ChangeNotifier{
 
   double getInterest()
   {
-    return (_intrestRate/100/12);
+    return (_interestRate/100/12);
   }
   double getMonths()
   {
@@ -108,8 +107,4 @@ double getLoanAmountPercent()
     _amountType = value;
   }
 
-  // double getTenureValue()
-  // {
-  //   return _selectedTenureType==_tenureType[0]?_tenureValue:_tenureValue*12;
-  // }
 }
